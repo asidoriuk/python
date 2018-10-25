@@ -65,5 +65,4 @@ while True:
             do[act_str]()
     elif act_str == "exit":
         break
-    else:
-        print("Неправильная команда, help - получение справки")
+
