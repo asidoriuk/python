@@ -25,8 +25,10 @@ def rm_dir(dir_name):
             print("Директория {} не пустая".format(dir_name))
 
 
+'''
 for i in range(1, 10):
     mk_dir('dir_' + str(i))
 
 for i in range(1, 10):
     rm_dir('dir_' + str(i))
+'''
