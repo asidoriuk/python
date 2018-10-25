@@ -12,5 +12,4 @@ def list_dirs(path):
             if os.path.isdir(i):
                 print(i)
 
-
-list_dirs(".")
+# list_dirs(".")

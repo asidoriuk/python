@@ -32,20 +32,36 @@ def print_help():
 
 do = {
     "help": print_help,
-    "1": os.chdir("."),
-    "2": lesson05_easy2.list_dirs("."),
-    "3": lesson05_easy1.rm_dir("1"),
-    "4": lesson05_easy1.mk_dir("1")
+    "1": os.chdir,
+    "2": lesson05_easy2.list_dirs,
+    "3": lesson05_easy1.rm_dir,
+    "4": lesson05_easy1.mk_dir
 }
 
-print(do["help"]())
-
 while True:
-    #print(os.getcwd())
     act_str = input("Выберите действие (help - получение справки): ")
     if act_str != "exit":
-        if do.get(act_str):
-            print(do.get(str(act_str)))
+        if act_str == "1":
+            dir_name = input("Введите название директории для перехода: ")
+            if dir_name:
+                dir_path = os.path.join(os.getcwd(), dir_name)
+                try:
+                    do[act_str](dir_path)
+                except FileNotFoundError:
+                    print("Нет такой директории")
+            else:
+                print("Остаемся в текущей директории")
+        elif act_str == "2":
+            do[act_str](".")
+        elif act_str == "3":
+            dir_name = input("Введите название директории для удаления: ")
+            if dir_name:
+                do[act_str](dir_name)
+        elif act_str == "4":
+            dir_name = input("Введите название директории для создания: ")
+            if dir_name:
+                do[act_str](dir_name)
+        elif act_str == "help":
             do[act_str]()
     elif act_str == "exit":
         break
