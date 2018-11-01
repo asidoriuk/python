@@ -47,10 +47,11 @@ while True:
                 dir_path = os.path.join(os.getcwd(), dir_name)
                 try:
                     do[act_str](dir_path)
+                    print("Успешно перешли в " + dir_path)
                 except FileNotFoundError:
-                    print("Нет такой директории")
+                    print("Нет такой директории.")
             else:
-                print("Остаемся в текущей директории")
+                print("Остаемся в текущей директории.")
         elif act_str == "2":
             do[act_str](".")
         elif act_str == "3":
@@ -65,4 +66,3 @@ while True:
             do[act_str]()
     elif act_str == "exit":
         break
-
